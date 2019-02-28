@@ -1,0 +1,23 @@
+'.source.tla':
+  'TLA Module':
+    prefix: 'MODULE'
+    body:
+      '---- MODULE ${1:moduleName} ----\n\n\n==========================='
+  'Init State':
+    prefix: 'Init =='
+    body:
+      'Init == ${1:TRUE}'
+  'Next State':
+    prefix: 'Next =='
+    body:
+      'Next == ${1:TRUE}'
+  'Spec Expression':
+    prefix: 'Spec =='
+    body:
+      'Spec == Init /\\\\ [][Next]_${1:vars}'
+  'logical and':
+    prefix: 'la'
+    body: '/\\\\'
+  'logical or':
+    prefix: 'lo'
+    body: '\\\\/'
