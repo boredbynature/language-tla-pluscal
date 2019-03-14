@@ -32,9 +32,13 @@ patterns: [
       match: '(^\\w+)\\s+(==)'
       captures:
           1:
-              name: 'entity.name.tag.tla'
+              name: 'support.function.tla'
           2:
               name: 'keyword.other.tla'
+  }
+  {
+      match: '!|@'
+      name: 'entity.name.tag.tla'
   }
   {
       match: '(^\\w+)(\\((\\w+\\s*,\\s*)*\\w+\\))\\s+(==)'
