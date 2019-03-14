@@ -21,3 +21,6 @@
   'logical or':
     prefix: 'lo'
     body: '\\\\/'
+  'Variable declaration':
+    prefix: 'VAR'
+    body: 'VARIABLES ${1:v}\nvars == << ${1:v} >>'
