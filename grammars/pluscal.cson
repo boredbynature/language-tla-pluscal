@@ -1,0 +1,51 @@
+name: 'PlusCal'
+scopeName: 'source.pcal'
+patterns: [
+  {
+    begin: '(--algorithm)\\s(\\w+)'
+    beginCaptures:
+        1:
+            name: 'support.function.pcal'
+        2:
+            name: 'entity.name.tag.pcal'
+    end: '(end) (algorithm)'
+    endCaptures:
+      1:
+          name: 'keyword.control.pcal'
+      2:
+          name: 'support.function.pcal'
+    patterns: [
+      {
+        match: 'begin|end|while|do|if|then|else|assert|skip|await|goto|with|process'
+        name: 'keyword.control.pcal'
+      },
+      {
+        match: ':=|=|/=|<|>|<=|>=|\\+|-|\\*|%'
+        name: 'keyword.operator.pcal'
+      },
+      {
+        match: '\\|\\||variables'
+        name: 'keyword.other.pcal'
+      },
+      {
+        match: '\\\\(land|lnot|neg|leq|ll|preceq|prec|in|subseteq|subset|sqsubseteq|sqsubset|cap|intersect|sqcap|oplus|ominus|odot|otimes|slash|E|EE|lor|equiv|notin|geq|gg|succ|succeq|supseteq|supset|sqsupset|sqsupseteq|cup|union|sqcup|uplus|X|times|wr|propto|A|AA|div|cdot|o|circ|bullet|star|bigcirc|sim|simeq|asymp|approx|cong|doteq)'
+        name: 'keyword.other.pcal'
+      },
+      {
+        match: '\\b(TRUE|FALSE)\\b'
+        name: 'constant.language.pcal'
+      },
+      {
+        match: '(\\w+)\\('
+        captures:
+            1:
+                name: 'support.function.pcal'
+      },
+      {
+        match: '\\w|\\.|,|;|\\(|\\)'
+        name: 'none'
+      },
+
+    ]
+  }
+]

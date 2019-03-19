@@ -6,9 +6,7 @@ scopeName: 'source.tla'
 patterns: [
   {
     begin: '\\(\\*'
-    captures:
-      0:
-        name: 'punctuation.definition.comment.tla'
+    patterns: [include: 'source.pcal']
     end: '\\*\\)'
     name: 'comment.block.tla'
   }
@@ -17,7 +15,7 @@ patterns: [
       name: 'comment.line.tla'
   }
   {
-      match: '^-+ MODULE \\w+ -+$'
+      match: '^----+ MODULE \\w+ ----+$'
       name: 'entity.name.section.tla'
   }
   {
