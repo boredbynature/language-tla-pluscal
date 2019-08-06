@@ -24,3 +24,6 @@
   'Variable declaration':
     prefix: 'VAR'
     body: 'VARIABLES ${1:v}\nvars == << ${1:v} >>'
+  'Choose Statement':
+    prefix: 'CHOOSE'
+    body: 'CHOOSE ${1:e}: ${1:e} ${2:\\\\in E}'
